@@ -68,7 +68,7 @@ export class CoreClient {
 
   constructor(private readonly env: Pick<Env, "CORE_INTERNAL_URL" | "CORE_SERVICE_TOKEN">, options: CoreClientOptions = {}) {
     this.baseUrl = new URL(env.CORE_INTERNAL_URL);
-    this.timeoutMs = options.timeoutMs ?? 10_000;
+    this.timeoutMs = options.timeoutMs ?? 30_000;
     this.retryDelayMs = options.retryDelayMs ?? 150;
     this.fetchFn = options.fetchFn ?? fetch;
   }
